@@ -1,0 +1,201 @@
+/**
+* DevPanel Addon
+*
+* @author http://rexdev.de
+* @link   http://www.redaxo.org/de/download/addons/?addon_id=919
+*
+* @version 0.1
+* $Id$:
+*/
+
+#dev-block-toggler {
+   position:fixed;
+   top:0;
+   right:0;
+   width:25px;
+   height:25px;
+   background:url(http://code.rexdev.de/images/hud/fullscreen.png) 50% 50% no-repeat black;
+   opacity:0.6;
+   z-index:99;
+   cursor:pointer;
+   -moz-border-radius-bottomleft:6px;
+   -webkit-border-radius:6px;
+}
+
+#dev-block-toggler:hover {
+   opacity:0.9;
+}
+
+#dev-block-toggler.opened {
+   background:url(http://code.rexdev.de/images/hud/iconize.png) 50% 50% no-repeat black;
+}
+
+#dev-block-maximizer {
+   position:fixed;
+   top:0;
+   right:25px;
+   width:25px;
+   height:25px;
+   background:url(http://code.rexdev.de/images/hud/fullscreen.png) 50% 50% no-repeat transparent;
+   opacity:0.6;
+   z-index:99;
+   cursor:pointer;
+   -moz-border-radius-bottomleft:6px;
+   -webkit-border-radius:6px;
+}
+
+#dev-block-maximizer.maximized {
+   background:url(http://code.rexdev.de/images/hud/min.png) 50% 50% no-repeat transparent;
+}
+
+#panel-items-closer {
+   visibility:hidden;
+}
+
+#dev-block {
+   position:fixed;
+   top:0;
+   right:0;
+   width:30%;
+   padding:6px;
+   background:black;
+   opacity:0.9;
+   z-index:98;
+   max-height:97%;
+   overflow:auto;
+   -moz-border-radius-bottomleft:6px;
+   -webkit-border-radius:6px;
+   color:silver !important;
+   font-family:Lucida Grande, Helvetica, Arial, sans-serif;
+}
+
+#dev-block.maximized {
+   width:auto;
+   left:0;
+   height:100%;
+   overflow:auto;
+}
+
+.toggler {
+   cursor:pointer;
+}
+
+#dev-block em,
+#dev-block pre {
+  color:white !important;
+  font-style:normal !important;
+}
+
+#dev-block pre {
+  font-size:12px;
+  font-family:monospace;
+  margin:0;
+}
+
+#dev-block b {
+  display:inline-block !important;
+  width:110px !important;
+  font-weight:normal !important;
+}
+
+#dev-block a,
+#dev-block a:link,
+#dev-block a:visited{
+   color:orange;
+   font-weight:bold;
+}
+
+#dev-block h2 {
+  font-size:12px;
+  font-weight:bold;
+  border-bottom:1px solid white;
+  margin:0 0 4px 0;
+  padding:4px 0 4px 0;
+}
+
+#dev-block h2#close {
+  float:right;
+  width:15px;
+  height:15px;
+  background:url(http://code.rexdev.de/images/hud/min.png) 50% 50% no-repeat black;
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+#dev-block h2 input {
+  display:inline;
+  color:orange;
+  background:transparent;
+  font-size:13px;
+  font-weight:bold;
+  /*font-family:monospace;*/
+  border:0;
+  margin:0;
+  padding:0 1px 0 1px;
+  cursor:pointer;
+}
+
+#dev-block h2 input.edit-mode {
+  /*background:orange;*/
+  color:red;
+}
+
+#dev-block h2 span.edit-var {
+  display:inline-block;
+  width:12px;
+  height:10px;
+  margin:0 4px 0 0;
+  background:url(jquery-ui-1.8.13.custom/css/vader/images/ui-icons_666666_256x240.png) -66px -116px no-repeat transparent;
+  cursor:pointer;
+}
+
+#dev-block h2 span.edit-var:hover {
+  background:url(jquery-ui-1.8.13.custom/css/vader/images/ui-icons_ffffff_256x240.png) -66px -116px no-repeat transparent;
+}
+
+#dev-block h2 span.save-var {
+  display:inline-block;
+  width:12px;
+  height:10px;
+  margin:0 4px 0 0;
+  background:url(jquery-ui-1.8.13.custom/css/vader/images/ui-icons_666666_256x240.png) -66px -148px no-repeat transparent;
+  cursor:pointer;
+}
+
+#dev-block h2 span.save-var:hover {
+  background:url(jquery-ui-1.8.13.custom/css/vader/images/ui-icons_ffffff_256x240.png) -66px -148px no-repeat transparent;
+}
+
+#dev-block ul {
+
+}
+
+#dev-block ul#clang li {
+   float:left;
+   margin: 0 4px 0 4px;
+}
+
+#dev-block div {
+   clear:left;
+}
+
+#dev-block h1.artikel {
+  float:right;
+  margin-right:10px;
+  color:silver;
+  font-weight:bold;
+  font-size:12px;
+}
+
+#dev-block h1.title {
+  float:right;
+  margin-right:10px;
+  color:gray;
+  font-weight:bold;
+  text-shadow:white 0px 0px 8px;
+  font-size:12px;
+}
+
+
+

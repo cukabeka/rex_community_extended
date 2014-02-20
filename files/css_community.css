@@ -1,0 +1,443 @@
+/*******************************************************************************
+********************************************************************************
+	Projekt		: Community AddOn
+********************************************************************************
+*******************************************************************************/
+
+
+/*	Breadcrumb ****************************************************************/
+div.com-path {
+	position: absolute;
+	left: 228px;
+	top: 144px;
+	width: 756px;
+}
+div.com-path p a {
+}
+
+
+
+/*	Links / Buttons ***********************************************************/
+
+p.link-button a, 
+p.link-save a {
+	display:block;
+	float:left;
+	margin-bottom:10px;
+	background-image:url(but_save.gif);
+	color:#666;
+}
+
+p.link-save a {
+	float: right;
+}
+
+p.link-button a span, 
+p.link-save a span {
+	display:block;
+	padding:1px 6px 0 6px;
+	background-image:url(but_save_r_nrml.gif);
+	background-position:100% 0%;
+	line-height:20px;
+}
+
+
+
+/*	User Navi - Mein Profil, Nachrichten etc. *********************************/
+div#com-usr-navi {
+	float: right;
+	padding-top: 10px;
+}
+div#com-usr-navi ul li, 
+div#com-usr-navi ul li a, 
+div#com-usr-navi ul li span {
+	display: block;
+}
+div#com-usr-navi ul li {
+	float: left;
+}
+div#com-usr-navi ul li.li-aln {
+	margin-left: 10px;
+}
+div#com-usr-navi ul li a, 
+div#com-usr-navi ul li a span {
+	background-image: url(bg_usr_navi.gif);
+}
+div#com-usr-navi ul li a {
+	background-position: 100% 0%;
+	color: #E9D2A2;
+}
+div#com-usr-navi ul li a span {
+	padding: 5px 10px;
+	background-position: 0% -200px;
+}
+div#com-usr-navi ul li.li-lst a, 
+div#com-usr-navi ul li.li-aln a {
+	background-position: 100% -100px;
+}
+div#com-usr-navi ul li.li-frst a span, 
+div#com-usr-navi ul li.li-aln a span {
+	background-position: 0% -300px;
+}
+div#com-usr-navi ul li a:hover, 
+div#com-usr-navi ul li a.active {
+	background-position: 100% -400px;
+	color: #4D7F7F;
+	text-decoration: none;
+}
+div#com-usr-navi ul li a:hover span, 
+div#com-usr-navi ul li a.active span {
+	background-position: 0% -600px;
+}
+div#com-usr-navi ul li.li-lst a:hover, 
+div#com-usr-navi ul li.li-aln a:hover, 
+div#com-usr-navi ul li.li-lst a.active, 
+div#com-usr-navi ul li.li-aln a.active {
+	background-position: 100% -500px;
+}
+div#com-usr-navi ul li.li-frst a:hover span, 
+div#com-usr-navi ul li.li-aln a:hover span, 
+div#com-usr-navi ul li.li-frst a.active span, 
+div#com-usr-navi ul li.li-aln a.active span {
+	background-position: 0% -700px;
+}
+
+
+
+
+
+/*	eigentliche Webseiten Navigation ******************************************/
+
+
+div#com-site-navi {
+	margin-bottom: 2em;
+}
+div#com-site-navi ul li ul {
+	border-bottom: 1px dotted #4D7F7F;
+}
+div#com-site-navi ul li, 
+div#com-site-navi ul li a {
+	display: block;
+}
+
+div#com-site-navi ul li a {
+	padding: 5px 0;
+	color: #4D7F7F;
+	border-bottom-color: #4D7F7F;
+}
+div#com-site-navi ul li a.active, 
+div#com-site-navi ul li a.current {
+	border-bottom-style: solid;
+}
+div#com-site-navi ul li a span {
+	padding: 0 2px;
+}
+div#com-site-navi ul li a:hover span, 
+div#com-site-navi ul li a.active span, 
+div#com-site-navi ul li a.current span {
+	background-color: #5B7E7E;
+	color: #FEF3E1;
+}
+
+div#com-site-navi ul li ul li {
+	padding-left: 10px;
+}
+div#com-site-navi ul li ul li a {
+	border-bottom: 0;
+}
+div#com-site-navi ul li ul li a, 
+div#com-site-navi ul li ul li a.active, 
+div#com-site-navi ul li ul li a:hover, 
+div#com-site-navi ul li ul li.li-lst a, 
+div#com-site-navi ul li ul li.li-lst a:hover {
+	padding-left: 10px;
+	background-image: url(icon_arrw_rght.gif);
+	background-position: 0px 50%;
+}
+
+
+
+/*	Tab Navigation ************************************************************/
+#cntnt div.com-tab {
+	margin-bottom: 1em;
+}
+#cntnt div.com-tab-navi {
+}
+#cntnt div.com-tab-navi ul{
+	margin:0px;
+}
+#cntnt div.com-tab-navi li {
+	display: block;
+	float: left;
+	padding-right: 22px;
+	background-image: url(bg_tab_navi.gif);
+	background-position: 100% 0px;
+}
+#cntnt div.com-tab-navi li.active,
+#cntnt div.com-tab-navi li.tab-frst-active {
+	background-position: 100% -100px;
+}
+#cntnt div.com-tab-navi li.active-nxt {
+	background-position: 100% -400px;
+}
+#cntnt div.com-tab-navi li.tab-lst {
+	background-position: 100% -200px;
+}
+#cntnt div.com-tab-navi li.tab-lst-active,
+#cntnt div.com-tab-navi li.tab-aln {
+	background-position: 100% -300px;
+}
+#cntnt div.com-tab-navi li a {
+	display: block;
+	padding: 4px 0 2px 0;
+	color: #4D7F7F;
+}
+#cntnt div.com-tab-navi li.tab-frst a,
+#cntnt div.com-tab-navi li.tab-frst-active a,
+#cntnt div.com-tab-navi li.tab-aln a {
+	padding-left: 8px;
+	background-image: url(bg_tab_navi.gif);
+	background-position: 0px -500px;
+}
+#cntnt div.com-tab-navi li.tab-frst-active a,
+#cntnt div.com-tab-navi li.tab-aln a {
+	background-position: 0px -600px;
+}
+#cntnt div.com-tab-navi li.active a,
+#cntnt div.com-tab-navi li.tab-frst-active a,
+#cntnt div.com-tab-navi li.tab-lst-active a,
+#cntnt div.com-tab-navi li.tab-aln a {
+	color: #0CAEDF;
+}
+
+
+
+
+
+
+/*	Tab Inhalt ****************************************************************/
+#cntnt div.com-tab-cntnt {
+	clear: both;
+	background-image: url(bg_tab_cntnt.gif);
+	background-repeat: repeat-y;
+}
+#cntnt div.com-tab-cntnt-2 {
+	background-image: url(bg_tab_top.gif);
+	background-position: 0% 0%;
+}
+#cntnt div.com-tab-cntnt-3 {
+	padding: 20px;
+	background-image: url(bg_tab_bttm.gif);
+	background-position: 0% 100%;
+}
+
+
+
+
+
+
+/************************************************************* User Profil *****
+*******************************************************************************/
+div.rex-com-profile {
+	margin-bottom: 2em;
+}
+div.rex-com-profile div.image {
+	float: left;
+	margin: 6px 20px 0 0;
+	width: 150px;
+	text-align: center;
+}
+/*
+	height: 150px;
+html>body div.rex-com-profile div.image {
+	height: auto;
+	min-height: 150px;
+}
+*/
+div#f-cntnt ul.com-navi-myprofile li {
+	display: block;
+	float: left;
+	width: 155px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	list-style: none;
+}
+div#f-cntnt ul.com-navi-myprofile li b, 
+div#f-cntnt ul.com-navi-myprofile li a {
+	display: block;
+	background-color: #F8FAED;
+	border: 1px dotted #0CAEDF;
+	line-height: 30px;
+	text-align: center;
+} 
+div#f-cntnt ul.com-navi-myprofile li b, 
+div#f-cntnt ul.com-navi-myprofile li a:hover {
+	border-style: solid;
+}
+
+div.com-tab table.profiledata td.label {
+	width: 110px;
+}
+div.com-tab table.profiledata tr  {
+	display: block;
+	width: 100%;
+	margin-bottom: 3px;
+	background-color: #F8FAED;
+}
+div.com-tab table.profiledata tr td {
+	background-color: #F8FAED;
+}
+
+
+/* ************************ BUCHSTABEN NAVI UND BLAETTERN ******** */
+
+div.com-comment,
+div.com-contact,
+div.com-guestbook {
+	position:relative;
+	margin-bottom: 5px;	
+	padding: 12px;
+	background-color: #F9FBEE;
+	border: 1px solid #FFF;
+	border-top-width: 3px;
+	border-bottom-width: 3px;
+}
+div.com-comment,
+div.com-contact {
+	zoom:1;
+}
+div.com-comment div.com-image,
+div.com-contact div.com-image,
+div.com-guestbook div.com-image {
+	float:left;
+	width:85px;
+	margin-bottom:10px;
+}
+/*
+div.com-comment div.com-content-name,
+div.com-guestbook div.com-content-name {
+	float:left;
+	width:150px;
+	margin-right:10px;
+}
+*/
+div.com-comment div.com-content,
+div.com-contact div.com-content,
+div.com-guestbook div.com-content {
+	float:left;
+	width:350px;
+}
+div.com-guestbook div.com-content {
+	width:250px;
+}
+div.com-comment div.com-content {
+	width:350px;
+}
+
+div.com-comment p.link-button,
+div.com-contact p.link-button,
+div.com-guestbook p.link-button {
+	margin:0;
+}
+
+
+
+
+
+
+
+
+
+
+/* ************************ BUCHSTABEN NAVI UND BLAETTERN ******** */
+div.com-navi {
+	clear: both;
+	padding: 0;
+}
+
+div.com-navi ul.navi {
+	height:auto;
+}
+div.com-navi ul li {
+	display:block;
+	float:left;
+}
+div.com-navi ul li,
+div.com-navi ul li a {
+	color:#353535;
+}
+#cntnt div.com-navi ul.com-navi-letters {
+	float: left;
+	width: 280px;
+	margin: 0;
+}
+div.com-navi ul.com-navi-letters li {
+	margin-right:4px;
+}
+div.com-navi ul.com-navi-paginate {
+	float:right;
+}
+div.com-navi ul.com-navi-paginate li.com-navi-first a,
+div.com-navi ul.com-navi-paginate li.com-navi-last a {
+	display:block;
+	background-image:url(but_save.gif);
+
+}
+div.com-navi ul.com-navi-paginate li.com-navi-first a span,
+div.com-navi ul.com-navi-paginate li.com-navi-last a span {
+	display:block;
+	padding:1px 6px 0 6px;
+	background-image:url(but_save_r_nrml.gif);
+	background-position:100% 0%;
+	line-height:20px;
+}
+div.com-navi ul.com-navi-letters li a,
+div.com-navi ul.com-navi-paginate li.com-navi-other a {
+	display:block;
+	padding-top:2px;
+	line-height:20px;
+}
+div.com-navi ul.com-navi-paginate li.com-navi-other a {
+	padding-right:10px;
+	padding-left:10px;
+}
+
+/*	Board ****************************************************************/
+
+div.com-topic, 
+div.com-answer div#rex-form {
+	margin-bottom: 5px;
+	padding: 12px;
+	background-color: #F9FBEE;
+	border: 1px solid #FFF;
+	border-top-width: 3px;
+	border-bottom-width: 3px;
+}
+div.com-topic div.com-content, 
+div.com-answer div.com-content {
+	float: left;
+	width: 350px;
+}
+div.com-topic p.topic {
+	padding: 10px 0  5px 0;
+	font-size: 1.5em;
+}
+div.com-topic p.topic a {
+	padding: 5px;
+	background-color: #5B7E7E;
+	color: #FEF3E1;
+}
+div.com-topic p.topic a:hover {
+}
+div.com-topic p.replies {
+	font-style: italic;
+}
+
+div.com-board-info h2 {
+	padding: 5px;
+	background-color: #5B7E7E;
+	color: #FEF3E1;
+}
+div.com-board-info h3 {
+	margin-top: 1em;
+}

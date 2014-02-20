@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CodeMirror: Textile mode</title>
+    <link rel="stylesheet" href="../../lib/codemirror.css">
+    <script src="../../lib/codemirror.js"></script>
+    <script src="tiddlywiki.js"></script>
+    <link rel="stylesheet" href="tiddlywiki.css">
+    <link rel="stylesheet" href="../../doc/docs.css">
+    <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+  </head>
+  <body>
+    <h1>CodeMirror: Textile mode</h1>
+
+<div><textarea id="code" name="code">
+
+Features in Textile 2.2:
+
+* Enabled "UTF-8 characters":#utf in uppercased acronyms if Unicode compiled into PCRE
+* Fixed rendering bug if acronym title contains 3+ uppercase chars -- thanks Ruud
+* Handle single quotes better if Unicode compiled into PCRE. Fixes Issue 26
+* Fixed double span class="caps" in tables. Fixes Issue 61
+* Fixed backwards apostrophes after formatted text. Fixes Issue 71
+* Fixed link creation regex bug
+* Can now parse "nested textile entities":#nesting up to 5 deep. Fixes Issue 1
+* "Table improvements":#table:
+** Added thead, tbody, tfoot support
+** Added caption support
+** Added summary support
+** Added colgroup support
+** Fixed 'trailing whitespace after pipe character breaks table' bug
+* Added "self-link":#self-link syntax
+* Added "Textile comments":#comments
+* Added ability to use "class/id/lang/style in list items":#lists
+* Added auto-numbering "labelled notes":#notes
+* Some whitespace code layout prettification
+* Added glyphs for quarter fractions: (1/4), (1/2) & (3/4); degrees: (o)C and plusminus (+/-).
+
+h2(#utf). UTF-8 support
+
+In Textile 2.0, foreign characters broke various aspects of Textile:
+
+* Acronyms with accented characters were not treated as part of the acronym
+* Apostrophes and quotes around foreign characters often rendered incorrect quote marks
+
+This is fixed in 2.2 *if PCRE has been compiled into your version of PHP*. People who do not have this enabled will still see the old behaviour.
+
+h2(#nesting). Nesting entities
+
+Since r1106 (November 2005), some nesting configurations have been buggy, for example bold-italic:
+
+bc. _*some text*_
+
+This is now fixed and you can nest up to five entities without incident, in any order:
+
+bc. _*-^some text^-*_
+
+The reason it's five is arbitrary: it could be any number but this was felt to be a good compromise between the reality of actually _wanting_ to nest this many entities vs speed of execution and trying to prevent infinite loops. If anyone can foresee a valid sitation where 5 might not be enough, let us know. It's just a constant set in the header block.
+
+h2(#self-link). Self-links
+
+If you wish to link to a URL and want the URL itself in the text, Textile 2.0 requires you to do this:
+
+bc. See "http://stefdawson.com/sw":http://stefdawson.com/sw
+
+Under Textile 2.2 you can now use the following 'dollar' shorthand (dollar because it's common to use the dollar as a reference to 'this' or 'self' in jQuery/mootools etc):
+
+bc. See "$":http://stefdawson.com/sw
+
+h2(#table). Table support
+
+Tables have been extended to add greater control over their presentation. Each of the following areas employs similar syntax to existing table characters wherever possible.
+
+h3. Caption
+
+Add a table caption using the following on its own row. It *must* appear above your first table row/thead declaration. The usual (class#id){style}[lang] attributes can be used before the dot.
+
+bc. |=. Your caption goes here
+
+h3. Summary
+
+Place a summary of your table (for screen readers) after the optional table definition:
+
+bc. table(myTable). This is a journey into sound. Stereophonic sound.
+
+h3. <thead>
+
+Put this sequence on its own line -- usually immediately before your @|_.@ row(s) -- to output a @<thead>@ tag block and thus designate them as header information:
+
+bc. |^.
+
+The usual (class#id){style}[lang] attributes can be used before the dot.
+
+h3. <tfoot>
+
+Put this on its own line before some table rows to designate what follows as footer content:
+
+bc. |~.
+
+The usual (class#id){style}[lang] attributes can be used before the dot. Note that if adhering to HTML 4, the tfoot must occur _before_ any tbody sections if you want the page to validate.
+
+h3. <tbody>
+
+Put this on its own line before regular table rows to designate them as body content:
+
+bc. |-.
+
+The usual (class#id){style}[lang] attributes can be used before the dot. Multiple tbody tags can be used to separate logical blocks of content.
+
+h3. colgroups
+
+Column group specification is supported using the following syntax on its own row. It *must* appear above your first table row/thead declaration (either before or after any caption) :
+
+bc. |:.
+
+Specify the usual (class#id){style}[lang]\colspan attributes before the dot to affect all columns in the colgroup. Any number appearing after the dot is considered to be a @width@ designator for the entire colgroup.
+
+You may also add 'cells' to this row, each of which will specify the @span@ and @width@ of a @<col>@ tag. Examples:
+
+h4. Specify @width@ of all columns in the @colgroup@
+
+bc. |:. 100|
+
+bc. <colgroup width="100">
+</colgroup>
+
+h4. Specify @width@ and @span@ in a @colgroup@ tag
+
+bc. |:\3. 100|
+
+bc. <colgroup span="3" width="100">
+</colgroup>
+
+h4. Specify individual @<col>@ tags to control the layout of columns
+
+bc. |:. |\2. |\3. 50|
+
+bc. <colgroup>
+   <col span="2" />
+   <col span="3" width="50" />
+</colgroup>
+
+h4. Designate a default @span@ and @width@ (plus class/id) to the colgroup, then override the widths of some columns
+
+bc. |:\5(grpclass#grpid). 200 | 100 |||80|
+
+bc. <colgroup class="grpclass" id="grpid" span="5" width="200">
+   <col width="100" />
+   <col />
+   <col />
+   <col width="80" />
+</colgroup>
+
+h2(#lists). Enhanced lists
+
+In Textile 2.0 you were only permitted to put a class/ID/lang/style attribute on the very first item in the list, which applied the markup to the container.
+
+Textile 2.2 lifts this restriction so you can now put the class/ID/lang/style modifiers on any list item; this works for ordered, unordered and definition lists.
+
+The current behaviour is retained if you put the item on the first element, i.e.:
+
+bc. #(class#id) Item 1
+# Item 2
+# Item 3
+
+Renders:
+
+bc. <ol class="class" id="id">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ol>
+
+If you also wish to put a class on individual items in the list you simply make the first list item end with a '.' dot immediately after the attributes. That holds the 'container' modifiers, and then proceed as normal. viz:
+
+bc. #(class#id).
+#(first) Item 1
+#(second) Item 2
+#(third) Item 3
+
+Gives:
+
+bc. <ol class="class" id="id">
+  <li class="first">Item 1</li>
+  <li class="second">Item 2</li>
+  <li class="third">Item 3</li>
+</ol>
+
+p=. *IMPORTANT*: _Due to the way the lists are processed, you need a '.' after the attributes of your 'empty' list item to trigger the correct behaviour._
+
+If you don't want to add a class to the container, just use:
+
+bc. #.
+
+as the first item -- *don't forget the dot!*
+
+
+h2(#notes). Auto-numbered notes
+
+When referencing or citing sources in body text you can employ footnotes. But these are explicitly numbered and if you therefore alter the order of the references (by inserting one or deleting/moving others) you must manually renumber all the footnotes in the article.
+
+Using notes you can label references in your body text, set up a definition for each of those labels, and then display the list of references at a suitable place in your body text. Crucially, the numbers will be automatically assigned when you save the article and recalculated if necessary as you alter the document.
+
+Also:
+
+# References from the main body may be hyperlinked to the references section or not -- either globally or on a note-by-note basis
+# Notes listed in the references section can optionally backlink to the place(s) they were used. Again, you can globally control whether backrefs are employed and, if so, whether the backref is just the first occurrence of the reference or all cited references. You may also override the backrefs on a note-by-note basis
+
+h3. Example notes
+
+h4. Textile
+
+bc.. Tim Berners-Lee is one of the pioneer voices
+in favour of Net Neutrality[#netneutral] and
+has expressed the view that ISPs should
+supply "connectivity with no strings
+attached"[#netneutral!] [#tbl_quote]
+
+Berners-Lee admitted that the forward slashes
+("//") in a web address were actually unnecessary.
+He told the newspaper that he could easily have
+designed URLs not to have the forward slashes.
+"... it seemed like a good idea at the time,"[#slashes]
+
+note#netneutral. "Web creator rejects net tracking":http://news.bbc.co.uk/2/hi/technology/7613201.stm. BBC. 15 September 2008
+
+note#tbl_quote. "Web inventor's warning on spy software":http://www.telegraph.co.uk/news/uknews/1581938/Web-inventor%27s-warning-on-spy-software.html. The Daily Telegraph (London). 25 May 2008
+
+note#slashes. "Berners-Lee 'sorry' for slashes":http://news.bbc.co.uk/1/hi/technology/8306631.stm. BBC. 14 October 2009
+
+notelist.
+
+p. Some other text...
+
+h4. Rendered
+
+Tim Berners-Lee is one of the pioneer voices in favour of Net Neutrality[#netneutral] and has expressed the view that ISPs should supply "connectivity with no strings attached"[#netneutral!] [#tbl_quote]
+
+Berners-Lee admitted that the forward slashes ("//") in a web address were actually unnecessary. He told the newspaper that he could easily have designed URLs not to have the forward slashes. "... it seemed like a good idea at the time,"[#slashes]
+
+note#netneutral. "Web creator rejects net tracking":http://news.bbc.co.uk/2/hi/technology/7613201.stm. BBC. 15 September 2008
+
+note#tbl_quote. "Web inventor's warning on spy software":http://www.telegraph.co.uk/news/uknews/1581938/Web-inventor%27s-warning-on-spy-software.html. The Daily Telegraph (London). 25 May 2008
+
+note#slashes. "Berners-Lee 'sorry' for slashes":http://news.bbc.co.uk/1/hi/technology/8306631.stm. BBC. 14 October 2009
+
+h4. Here is the list of notes:
+
+notelist.
+
+The _a b c_ backref links can be altered by specifying the starting character in the notelist tag:
+
+bc. notelist:1.
+
+See the "Online Textile tester":http://textile.sitemonks.com/ for more examples and to try this all out for yourself.
+
+h2(#comments). Textile comments
+
+Textile 2.2 introduces the notion of a comment. So now, instead of using @<txp:hide>@ in an article -- which is fine in Forms, but can look messy in an article -- you can do this:
+
+bc. ###. For your eyes only. Only for yoooooouuu...
+
+###. For internal use only -- nothing to see here, please disperse. This is not rendered in Textile 2.2
+
+
+###############################################################################################################################################
+
+
+!Textile Formatting
+* Rendered versions can be found at: http://www.tiddlywiki.com/#Reference
+
+|!Option            | !Syntax            |
+|bold font          | ''bold''           |
+|italic type        | //italic//         |
+|underlined text    | __underlined__     |
+|strikethrough text | --strikethrough--  |
+|superscript text   | super^^script^^    |
+|subscript text     | sub~~script~~      |
+|highlighted text   | @@highlighted@@    |
+|preformatted text  | {{{preformatted}}} |
+
+!Block Elements
+<<<
+!Heading 1
+
+!!Heading 2
+
+!!!Heading 3
+
+!!!!Heading 4
+
+!!!!!Heading 5
+<<<
+
+!!Lists
+<<<
+* unordered list, level 1
+** unordered list, level 2
+*** unordered list, level 3
+
+# ordered list, level 1
+## ordered list, level 2
+### unordered list, level 3
+
+; definition list, term
+: definition list, description
+<<<
+
+!!Blockquotes
+<<<
+> blockquote, level 1
+>> blockquote, level 2
+>>> blockquote, level 3
+
+> blockquote
+<<<
+
+!!Preformatted Text
+<<<
+{{{
+preformatted (e.g. code)
+}}}
+<<<
+
+!!Code Sections
+<<<
+{{{
+Text style code
+}}}
+
+//{{{
+JS styled code. Textile mixed mode should support highlighter switching in the future.
+//}}}
+
+<!--{{{-->
+XML styled code. Textile mixed mode should support highlighter switching in the future.
+<!--}}}-->
+<<<
+
+!!Tables
+<<<
+|CssClass|k
+|!heading column 1|!heading column 2|
+|row 1, column 1|row 1, column 2|
+|row 2, column 1|row 2, column 2|
+|>|COLSPAN|
+|ROWSPAN| ... |
+|~| ... |
+|CssProperty:value;...| ... |
+|caption|c
+
+''Annotation:''
+* The {{{>}}} marker creates a "colspan", causing the current cell to merge with the one to the right.
+* The {{{~}}} marker creates a "rowspan", causing the current cell to merge with the one above.
+<<<
+!!Images /% TODO %/
+cf. [[Textile.com|http://www.tiddlywiki.com/#EmbeddedImages]]
+
+!Hyperlinks
+* [[WikiWords|WikiWord]] are automatically transformed to hyperlinks to the respective tiddler
+** the automatic transformation can be suppressed by preceding the respective WikiWord with a tilde ({{{~}}}): {{{~WikiWord}}}
+* [[PrettyLinks]] are enclosed in square brackets and contain the desired tiddler name: {{{[[tiddler name]]}}}
+** optionally, a custom title or description can be added, separated by a pipe character ({{{|}}}): {{{[[title|target]]}}}<br>'''N.B.:''' In this case, the target can also be any website (i.e. URL).
+
+!Custom Styling
+* {{{@@CssProperty:value;CssProperty:value;...@@}}}<br>''N.B.:'' CSS color definitions should use lowercase letters to prevent the inadvertent creation of WikiWords.
+* <html><code>{{customCssClass{...}}}</code></html>
+* raw HTML can be inserted by enclosing the respective code in HTML tags: {{{<html> ... </html>}}}
+
+!Special Markers
+* {{{<br>}}} forces a manual line break
+* {{{----}}} creates a horizontal ruler
+* [[HTML entities|http://www.tiddlywiki.com/#HtmlEntities]]
+* [[HTML entities local|HtmlEntities]]
+* {{{<<macroName>>}}} calls the respective [[macro|Macros]]
+* To hide text within a tiddler so that it is not displayed, it can be wrapped in {{{/%}}} and {{{%/}}}.<br/>This can be a useful trick for hiding drafts or annotating complex markup.
+* To prevent wiki markup from taking effect for a particular section, that section can be enclosed in three double quotes: e.g. {{{"""WikiWord"""}}}.
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: 'tiddlywiki',
+        lineNumbers: true,
+        enterMode: 'keep',
+        matchBrackets: true
+      });
+    </script>
+
+    <p>Textile mode supports a single configuration.</p>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-tiddlywiki</code>.</p>
+  </body>
+</html>

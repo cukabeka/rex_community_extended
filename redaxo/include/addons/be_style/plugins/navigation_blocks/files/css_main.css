@@ -1,0 +1,98 @@
+/**
+ * navigation_blocks - be_style Plugin for Redaxo
+ *
+ * @version 0.6.0
+ * @package redaxo 4.3.x/4.4.x/4.5.x
+ */
+
+body#rex-page-be-style .rex-addon-content h1 {
+  font-size: 1.5em;
+  padding:0;
+  margin: 0.3em 0 0.4em;
+}
+body#rex-page-be-style .rex-addon-content h1:first-child,
+body#rex-page-be-style .rex-addon-content h2:first-child,
+body#rex-page-be-style .rex-addon-content h3:first-child {
+  margin: 0 0 0.4em;
+}
+body#rex-page-be-style .rex-addon-content h1.rex-title {
+  font-size: 1.5em;
+  color: #14568A;
+  margin: 1em 0 0.4em;
+}
+body#rex-page-be-style .rex-addon-content h1.rex-title:first-child {
+  margin: 1.3em 0;
+}
+body#rex-page-be-style .rex-addon-content h2 {
+  font-size: 1.3em;
+  margin: 0.4em 0;
+  padding:0;
+}
+body#rex-page-be-style .rex-addon-content h3 {
+  font-size: 1.2em;
+  margin: 0.3em 0;
+  padding:0;
+}
+body#rex-page-be-style .rex-addon-content h4 {
+  font-size: 1.1em;
+  margin: 0.2em 0;
+  padding:0;
+}
+body#rex-page-be-style .rex-addon-content h5 {
+  font-size: 1em;
+  margin: 0.2em 0;
+  padding:0;
+}
+body#rex-page-be-style .rex-addon-content h6 {
+  font-size: 1em;
+  margin: 0.2em 0;
+  padding:0;
+}
+body#rex-page-be-style .rex-addon-content li,
+body#rex-page-be-style .rex-addon-content p {
+  font-size: 1.1em;
+  line-height: 1.2em;
+  margin: 0.2em 0;
+}
+body#rex-page-be-style .rex-addon-content ul,
+body#rex-page-be-style .rex-addon-content ol {
+}
+body#rex-page-be-style .rex-addon-content ul,
+body#rex-page-be-style .rex-addon-content ol,
+body#rex-page-be-style .rex-addon-content li {
+  margin: 0.2em 0.8em !important;
+}
+body#rex-page-be-style .rex-addon-content hr {
+  border:0;
+  height:0;
+  border-top: 1px solid #cbcbcb;
+  margin:10px 0;
+}
+body#rex-page-be-style .rex-addon-content hr:first-child,
+body#rex-page-be-style .rex-addon-content hr:last-child {
+  display:none;
+}
+body#rex-page-be-style .rex-addon-content code {
+  background-color: #fff;
+  border: 1px solid #EAEAEA;
+  border-radius: 3px 3px 3px 3px;
+  color: black;
+  display: inline-block;
+  font-size: 1.1em;
+  margin: 0 2px;
+  padding: 0 5px;
+}
+body#rex-page-be-style .rex-addon-content pre code {
+  background: none repeat scroll 0 0 #fff;
+  border-radius: 4px 4px 4px 4px;
+  color: #DD1144;
+  font-size: 1.2em;
+  margin: 6px 0;
+  padding: 6px;
+}
+
+body#rex-page-be-style.be-style-agb-skin .rex-addon-content .settings,
+body#rex-page-be-style.be-style-agk-skin .rex-addon-content .settings {
+  padding-left: 24px;
+  background:url(../agk_skin/list.gif) 0 50% no-repeat;
+}

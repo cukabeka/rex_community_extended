@@ -1,0 +1,401 @@
+/*******************************************************************************
+********************************************************************************
+	Projekt		: Community AddOn
+	
+	Agentur		: blumbeet - web.studio
+				: www.blumbeet.com
+********************************************************************************
+*******************************************************************************/
+
+/*	Reset - NICHTS VERAENDERN *************************************************/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:focus {
+	outline: 0;
+}
+
+a {
+	text-decoration:none;
+}
+
+img, fieldset {
+	border: 0;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+
+html {
+	min-height: 100%;
+	margin-bottom: 1px;
+}
+
+body {
+	position:relative;
+	background-color: #FFF;
+	color: #000;
+	font-size: 100.01%;
+	font-weight: normal;
+	line-height: 1;
+	text-align:left;
+}
+
+
+/*	Standard - NICHTS VERAENDERN **********************************************/
+
+body, div, h1, h2, h3, h4, h5, h6, p, 
+a, span,  
+li {
+	background-repeat:no-repeat;
+}
+
+ol li {
+	list-style-type: decimal;
+}
+
+.fl-lft, 
+.flLeft { 
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.fl-rght { 
+	float: right;
+	margin: 0 0 0 20px;
+}
+.algn-left { 
+	text-align: left;
+}
+.algn-right { 
+	text-align: right;
+}
+.algn-center { 
+	text-align: center;
+}
+
+.clearer { 
+	display: block;
+	clear: both;
+	line-height: 0em;
+	height: 1px;
+	font-size: 0;
+	visibility: hidden;
+}
+
+.clear { 
+	clear: both;
+}
+
+.hidden {
+	display: inline;
+	position: absolute;
+	left: -1000px;
+	top: -1000px;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+	background-color: #FFF;
+}
+
+
+table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 2px 5px;
+	vertical-align: top;
+}
+
+
+/*	Allgemeines ***************************************************************/
+h1 {
+	padding: 20px 0 20px 0;
+	color: #FEF3E1;
+	font-family: "Meta-Normal", Arial, Verdana, "Times New Roman", sans-serif;
+	font-size: 1.8em;
+	font-weight: normal;
+}
+h1 span {
+	padding: 0 8px;
+	background-color: #5B7E7E;
+}
+
+h2 {
+	margin-bottom: 1em;
+	color: #999A9C;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+
+h3 {
+	margin-bottom: 15px;
+	color: #6D6A6B;
+	font-family: "Meta-Normal", Arial, Verdana, "Times New Roman", sans-serif;
+	font-size: 1.6em;
+	font-weight: normal;
+}
+h3 strong {
+	color: #4D7F7F;
+}
+h4 {
+	color: #0CAEDF;
+	font-family: "Meta-Normal", Arial, Verdana, "Times New Roman", sans-serif;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+
+a {
+	color: #0CAEDF;
+}
+div#wrppr a {
+	border-bottom: 1px dotted #0CAEDF;
+}
+div#wrppr p.image a, 
+div#wrppr p.link-button a, 
+div#wrppr div.com-tab-navi li a {
+	border: 0;
+}
+
+div#wrppr a:hover {
+	border-bottom-style: solid;
+}
+div#wrppr a.icon {
+	border-bottom: 0;
+}
+div#wrppr a.icon span {
+	border-bottom: 1px dotted #0CAEDF;
+}
+div#wrppr a.icon:hover span {
+	border-bottom-style: solid;
+}
+
+div#wrppr p.link-button a, 
+div#wrppr p.link-save a, 
+div#wrppr ul.com-navi-paginate a, 
+div#wrppr div.com-topic p.topic a {
+	border: 0;
+}
+
+
+div#f-cntnt p, 
+div#f-cntnt ul, 
+div#f-cntnt ol, 
+div#f-cntnt table, 
+div#f-rght p, 
+div#f-rght ul, 
+div#f-rght ol, 
+div#f-rght table {
+	margin-bottom: 1em;
+}
+
+
+input, textarea, select {
+	color: #6D6A6B;
+	font-family: Verdana, Arial, "Times New Roman", sans-serif;
+	font-size: 1em;
+}
+
+
+p.answertext, 
+p.warning, 
+p.com-warning {
+	padding: 10px;
+	background-color: #5B7E7E;
+	color: #FEF3E1;
+}
+
+
+/*	Seitestruktur *************************************************************/
+body {
+	padding-left: 23px;
+	background: #FFF url(bg_bdy.jpg) repeat-x top left;
+	color: #6D6A6B;
+	font-family: Verdana, Arial, "Times New Roman", sans-serif;
+}
+
+div#wbst {
+	position: relative;
+	width: 960px;
+	font-size: .75em;
+	line-height: 1.4;
+}
+
+div#hdr {
+	float: left;
+	width: 100%;
+	height: 180px;
+}
+div#ftr {
+	float: left;
+	width: 100%;
+	font-size: .75em;
+}
+
+
+div#f-lft, 
+div#f-cntnt, 
+div#f-rght {
+	float: left;
+	width: 208px;
+	padding: 10px 0;
+}
+div#f-rght {
+	float: right;
+}
+div#f-cntnt {
+	width: 544px;
+}
+
+div#f-cntnt div#cntnt {
+	padding: 0 22px 0 20px;
+}
+
+/*	Header ********************************************************************/
+div#logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url(logo.jpg);
+	background-position: 3px 0px;
+	
+	background-repeat: no-repeat;
+}
+div#logo p a {
+	display: block;
+	width: 309px;
+	height: 128px;
+	text-indent: -1000em;
+}
+
+
+
+
+
+div.bx-shdw {
+	margin-bottom: 2em;
+	padding-top: 4px;
+	padding-left: 4px;
+	background-image: url(shdw_top.gif);
+}
+div.bx-shdw-2 {
+	padding-right: 4px;
+	padding-bottom: 4px;
+	background-image: url(shdw_bttm.gif);
+	background-position: 100% 100%;
+}
+div.bx-v1-cntnt {
+	padding: 20px 15px;
+	background-color: #F9FBEE;
+	background-color: #F8FAED;
+}
+
+div.spcl-bgcolor {
+	margin-bottom: 5px;
+	padding: 12px;
+	background-color: #F9FBEE;
+	border: 1px solid #FFF;
+	border-top-width: 3px;
+	border-bottom-width: 3px;
+}
+
+
+
+div#com-usr-navi {
+	font-family: "Meta-Normal", Verdana, Arial, "Times New Roman", sans-serif;
+}
+
+
+/*	Formulare *****************************************************************/
+div#f-lft fieldset, 
+div#f-rght fieldset {
+	padding: 0;
+}
+
+
+/*	Icons *********************************************************************/
+a.icon-lgt, 
+a.icon-myprfl, 
+a.icon-psswd-frgttn, 
+a.icon-rgstr {
+	padding-left: 15px;
+	background-position: 0px 3px;
+}
+a.icon-rgstr {
+	background-image: url(icon_rgstr.gif);
+}
+a.icon-psswd-frgttn {
+	background-image: url(icon_psswd_frgttn.gif);
+}
+a.icon-myprfl {
+	background-image: url(icon_myprfl.gif);
+}
+a.icon-lgt {
+	background-image: url(icon_lgt.gif);
+}
+ul.com-usr-list li {
+	padding-left: 15px;
+	background-image: url(icon_usr_list.gif);
+	background-position: 0px 4px;
+}
+
+
+
+
+div.splt {
+	clear: both;
+	margin-bottom: 1em;
+	height: 5px;
+	background-image: url(splt.gif);
+	background-repeat: repeat-x;
+	overflow: hidden;
+}
+
+
+
+
+
+/*	Inhaltsspalte *************************************************************/
+p.image {
+	padding: 4px 0 0 0;
+}
+p.image span {
+	display: block;
+	padding: 10px 0 0 0;
+	color: #BEBFC1;
+}
+
+p.img-top, 
+p.img-bttm {
+	margin-bottom: 1em;
+}
+
+
+#cntnt ul {
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+#cntnt ul.com-navi-myprofile {
+	margin-left: 0px;
+}
+
+#cntnt li {
+	list-style-type:square;
+}
+
+

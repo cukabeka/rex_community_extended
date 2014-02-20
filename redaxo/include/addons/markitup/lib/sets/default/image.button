@@ -1,0 +1,12 @@
+###
+name:::::'translate:markitup_name_image'
+###
+className:::::'markitup-image'
+###
+openWith:::::' '
+###
+closeWith:::::' '
+###
+beforeInsert:::::function(h) {
+  openMediaPool('TINYIMG');
+}

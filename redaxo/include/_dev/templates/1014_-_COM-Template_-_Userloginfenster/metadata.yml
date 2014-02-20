@@ -1,0 +1,8 @@
+name: '1014 - COM-Template - Userloginfenster'
+active: false
+attributes:
+    categories:
+        all: '1'
+    ctype: {  }
+    modules:
+        1: { all: '1' }

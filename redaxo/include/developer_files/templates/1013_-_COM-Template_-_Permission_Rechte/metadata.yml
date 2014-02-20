@@ -1,0 +1,8 @@
+name: '1013 - COM-Template - Permission/Rechte'
+active: false
+attributes:
+    categories:
+        all: '1'
+    ctype: {  }
+    modules:
+        1: { all: '1' }

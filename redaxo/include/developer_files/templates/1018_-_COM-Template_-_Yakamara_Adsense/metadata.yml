@@ -1,0 +1,8 @@
+name: '1018 - COM-Template - Yakamara Adsense'
+active: false
+attributes:
+    categories:
+        all: '1'
+    ctype: {  }
+    modules:
+        1: { all: '1' }

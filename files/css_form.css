@@ -1,0 +1,147 @@
+/*	Neu ***********************************************************************/
+div#rex-form fieldset {
+}
+
+div#rex-form p {
+	clear: both;
+	margin-bottom: 10px;
+}
+div#rex-form p.formcheckbox, 
+div#rex-form p.formmcheckbox {
+	float: left;
+	width: 100%;
+}
+div.com-usersearch p.ftxt, 
+div.com-usersearch p.fslct {
+	float: left;
+}
+
+div#rex-form p.formselect, 
+div#rex-form p.formtextarea, 
+div#rex-form p.formcheckbox, 
+div#rex-form p.formmcheckbox {
+	margin-bottom: 10px;
+}
+div#rex-form p.formhtml, 
+div#rex-form p.formcaptcha {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+div#rex-form p.formhtml {
+	font-weight: bold;
+}
+
+
+/******************************	Label */
+div#rex-form p label {
+	display: block;
+	float: left;
+	width: 155px;
+	padding-top: 3px;
+}
+div#rex-form p.formtextarea label {
+	float: none;
+}
+div#rex-form p.formcheckbox label {
+	padding-top: 0px;
+}
+div.com-answer div#rex-form div.com-content p.formtext label {
+	width: 100px;
+}
+div#rex-form p.formtextarea label {
+	width: auto;
+}
+
+/******************************	Captcha */
+div#rex-form p.formcaptcha input {
+	margin-top:4px;
+}
+div#rex-form p.formcaptcha span {
+	display:block;
+}
+
+/******************************	Input */
+div#rex-form p.formtext input, 
+div#rex-form p.formpassword input, 
+div#rex-form p.formcaptcha input {
+	padding: 2px;
+	width: 250px;
+}
+div.com-answer div#rex-form div.com-content p.formtext input {
+	width: 200px;
+}
+div#rex-form p.formcaptcha input {
+	width: 100px;
+}
+div#rex-form p.formtext input, 
+div#rex-form p.formpassword input, 
+div#rex-form p.formcaptcha input, 
+div#rex-form p.formmediapool input {
+	border: 1px dashed #90DDFA;
+}
+
+/******************************	TEXTAREA */
+div#rex-form p.formtextarea textarea {
+	padding: 2px;
+	width: 405px;
+	height: 80px;
+	border: 1px dashed #90DDFA;
+}
+div.com-answer div#rex-form div.com-content p.formtextarea textarea {
+	width: 300px;
+}
+/******************************	Select */
+div#rex-form p.formselect select {
+	width: 256px;
+}
+
+/******************************	CHECKBOX */
+/*	formmcheckbox - doppeltes M -> Userbild loeschen */
+div#rex-form p.formcheckbox input, 
+div#rex-form p.formmcheckbox input {
+	float: left;
+	margin: 5px;
+	margin-left: 130px;
+}
+div#rex-form p.formmcheckbox input {
+	margin-left: 0px;
+}
+div#rex-form p.formcheckbox label, 
+div#rex-form p.formmcheckbox label {
+	float: left;
+	margin-left: 10px;
+	width: 250px;
+}
+
+/******************************	Mediapool */
+/*	persoenliches Bild loeschen */
+div#rex-form p.formmediapool label img {
+	display: block;
+	margin-top: 10px;
+}
+/******************************	LINE */
+div#rex-form p.formline {
+	overflow: hidden;
+	height: 1px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+
+
+/******************************	SUBMIT */
+div#rex-form p.formsubmit label {
+	display: none;
+}
+div#rex-form p.bt1, 
+div#rex-form p.formsubmit input {
+	margin-left: 155px;
+}
+div#rex-form p.formsubmit input {
+	padding: 2px;
+	background-color: #5B7E7E;
+	border: 0;
+	color: #FEF3E1;
+}
+

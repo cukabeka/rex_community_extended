@@ -1,0 +1,140 @@
+/**
+* DevPanel Addon
+*
+* @author http://rexdev.de
+* @link   http://www.redaxo.org/de/download/addons/?addon_id=919
+*
+* @version 0.1
+* $Id$:
+*/
+
+/* ADDON HEADLINE */
+span.addonversion {
+  font-size:10px;
+  color:silver;
+  }
+
+/* ADDON CHAPTER-LINKS */
+a.jsopenwin,
+a.blank,
+span.jsopenwin {
+  padding-right:16px;
+  background:url('jsopenwin.gif') no-repeat 100% 0 ;
+  }
+
+/* ADDON CONTENT */
+#dev-panel {
+  /*padding:2px 8px 8px 8px;*/
+  }
+
+#dev-panel p {
+  font-size:12px;
+  }
+
+#dev-panel h1 {
+  font-size:16px;
+  border-bottom:1px solid #DFE9E9;
+  margin:2px 0 10px 0;
+  padding:0 0 2px 0;
+  }
+
+#dev-panel h2 {
+  font-size:14px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+#dev-panel h3 {
+  font-size:13px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+#dev-panel h4 {
+  font-size:12px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+#dev-panel h5 {
+  font-size:11px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+#dev-panel cite,
+#dev-panel code,
+#dev-panel pre {
+  color:blue;
+  font-family:monospace;
+  font-style:normal;
+  font-size:12px;
+  }
+
+#dev-panel pre {
+  overflow:auto;
+  border:1px dashed #C0C0C0;
+  background:#FAF9F5;
+  margin:2px 4px 8px 0;
+  padding:8px;
+  line-height:12px;
+  }
+
+#dev-panel pre.plain {
+  overflow:auto;
+  border:0;
+  background:transparent;
+  margin:2px 4px 8px 0;
+  padding:8px;
+  line-height:12px;
+  color:black;
+  }
+
+#dev-panel hr {
+  height:1px;
+  border:0;
+  border-top:1px solid silver;
+  margin:8px 0;
+  padding:0;
+  }
+
+#dev-panel ul#panel-list {
+  width:454px;
+  background:white;
+  border:1px solid silver;
+  margin-left:155px;
+  list-style-type:none;
+  }
+
+#dev-panel ul#panel-list li {
+  padding:3px;
+  margin:3px;
+  background:#efefef;
+  cursor:move;
+  -moz-border-radius:4px;
+  }
+
+#dev-panel ul#panel-list li.checked {
+  background:#dedede;
+  }
+
+#dev-panel ul#panel-list li.ui-sortable-helper {
+  background:#3C9ED0;
+  color:white;
+  }
+
+#dev-panel ul#panel-list li input {
+  margin:0 8px 0 0;
+  }
+
+#dev-panel ul#panel-list li span.sort-icon {
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin:0 6px 0 0;
+  background:url(jquery-ui-1.8.13.custom/css/vader/images/ui-icons_666666_256x240.png) -130px -3px no-repeat transparent;
+  }
+
+#dev-panel ul#panel-list li.ui-sortable-helper span.sort-icon {
+  background:url(jquery-ui-1.8.13.custom/css/vader/images/ui-icons_ffffff_256x240.png) -130px -3px no-repeat transparent;
+  }

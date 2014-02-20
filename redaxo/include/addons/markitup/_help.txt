@@ -1,0 +1,62 @@
+h1. 1. Button-Set
+
+* Alle verfügbaren Buttons werden im Default-Set Editor angezeigt
+* Ein Klick auf einen Button fügt diesen der Default-Set Liste hinzu
+* Position/Reihenfolge der Buttons kann - wie vom MEDIALIST Widget gewohnt - bearbeitet werde.
+* Nachträglich bzw. zusätzlich installierte Buttons werden in der Auswahl unter _Extras_ automatisch aufgelistet.
+
+
+h1. 2. Marktitup Instanz aufrufen
+
+Marktitup kann wahlweise mit expliziten Einstellungen für _Button-Set_, _Breite_ & _Höhe_ aufgerufen werden, als auch vereinfacht mit den default Einstellungen aus dem Backend. Zu beachten ist in beiden Fällen, daß die CSS Klasse in der textarea (im Beispiel: @markitup-text@) und im markitup Aufruf identisch sind:
+
+h3. 2.1 Mit Einstellungen aus Addon Backend
+
+bc.. <textarea name="VALUE[1]" class="markitup-text" cols="80" rows="10">REX_VALUE[1]</textarea>
+
+<?php
+if(OOAddon::isAvailable('markitup'))
+{
+  a287_markitup::markitup('textarea.markitup-text');
+}
+?>
+
+h3. 2.2 Mit expliziten Einstellungen
+
+bc.. <textarea name="VALUE[1]" class="markitup-text" cols="80" rows="10">REX_VALUE[1]</textarea>
+
+<?php
+if(OOAddon::isAvailable('markitup'))
+{
+  a287_markitup::markitup(
+    'textarea.markitup-text',
+    'h1,h2,h3,h4,h5,h6,separator,alignleft,alignright,aligncenter,alignjustify,separator,bold,italic,stroke,underline,superscript,subscript,table,separator,listbullet,listnumeric,separator,image,linkmedia,separator,linkintern,linkextern,linkmailto,separator,blockquote,code,separator,clean,separator,preview',
+    '700',
+    '400'
+  );
+}
+?>
+
+h1. 3. Preview Varianten - Vor & Nachteile
+
+h3. 3.1 INLINE
+
+* *Vorteile*
+## Preview steht schon beim Anlegen eines Block zur Verfügung
+## Modulausgabe muß nicht angepaßt werden.
+## Schneller workflow
+* *Nachteile*
+## Preview ohne das CSS styling des Frontends
+(wichtiges CSS markup kann aber in @./files/addons/markitup/preview.css@ notiert werden)
+
+h3. 3.2 WYSIWYG
+
+* *Vorteile*
+## Echtes WYSIWYG
+* *Nachteile*
+## Anzeige der WYSIWYG Preview erfordert extra Code im Modul OUT - siehe "WYSIWYG Beispielmodul":index.php?page=markitup&subpage=modul .
+## Preview ist erst möglich sobald das Modul/der Block bereits hinzugefügt worden ist.
+## Potentielle Konflikte mit dynamisch nachgeladenen Elementen (z.b. "(blank)Lightbox/scriptaculous.js":http://www.gn2-code.de/issues/101 ).
+## Langsamerer workflow
+
+p. "www.gn2-netwerk.de":http://www.gn2-netwerk.de

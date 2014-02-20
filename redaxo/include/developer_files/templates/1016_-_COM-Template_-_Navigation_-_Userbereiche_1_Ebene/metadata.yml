@@ -1,0 +1,8 @@
+name: '1016 - COM-Template - Navigation - Userbereiche 1 Ebene'
+active: false
+attributes:
+    categories:
+        all: '1'
+    ctype: {  }
+    modules:
+        1: { all: '1' }

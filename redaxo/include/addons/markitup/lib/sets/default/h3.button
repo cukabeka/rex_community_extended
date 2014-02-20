@@ -1,0 +1,10 @@
+###
+name:::::'translate:markitup_name_h3'
+###
+className:::::'markitup-h3'
+###
+openWith:::::'\n\nh3(!(([![Class]!]))!). '
+###
+closeWith:::::'\n\n'
+###
+placeHolder:::::'translate:markitup_placeholder_h3'

@@ -1,0 +1,10 @@
+
+com_board_name = Community Gruppen
+com_board_xform_enter_name = Bitte geben Sie den Gruppennamen ein.
+
+com_board_forallboards = Für alle, egal welche Gruppe
+com_board_inallboards = Muss in jeder Gruppe sein
+com_board_inoneboard = Muss in einer Gruppe sein
+com_board_noboards = Hat keine Gruppen
+
+com_board_perm = Gruppenrechte

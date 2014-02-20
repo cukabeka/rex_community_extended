@@ -1,0 +1,25 @@
+/**
+ * Textile XT Addon
+ *
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
+ * @author jdlx - https://github.com/jdlx/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 1.6.2
+ */
+
+div.a79_help_overview {
+  margin-top: 10px;
+}
+
+div.a79_help_overview h3 {
+  font-size:1.2em;
+}
+.a79_help_overview thead th {
+  text-align: left;
+}
+
+div#rex-title h1 span {
+    color: #CBCBCB;
+    font-size: 0.5em;
+}
